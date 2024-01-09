@@ -21,7 +21,7 @@
 </head>
 <body>
 
-<div class="timer">0:00</div>
+<div class="timer">0:00:00</div>
 
 <script>
   let seconds = 0;
@@ -42,10 +42,10 @@
       if (seconds === 60) {
         seconds = 0;
         minutes++;
-      }
-      if (minutes === 60) {
-        minutes = 0;
-        hours++;
+        if (minutes === 60) {
+          minutes = 0;
+          hours++;
+        }
       }
       display();
     }, 1000);
