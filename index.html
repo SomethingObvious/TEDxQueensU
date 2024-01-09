@@ -7,7 +7,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 300vh;
+      height: 60vh;
       margin: 0;
       font-family: Arial, sans-serif;
     }
@@ -33,7 +33,7 @@
   }
 
   function display() {
-    document.querySelector('.timer').innerHTML = `$:{pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+    document.querySelector('.timer').innerHTML = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
   }
 
   function startTimer() {
