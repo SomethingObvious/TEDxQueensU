@@ -1,1 +1,43 @@
-<h1>Hello, World </h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Count Up Timer</title>
+  <style>
+    .timer {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="timer">0:00</div>
+
+<script>
+  let seconds = 0;
+  let minutes = 0;
+  
+  function pad(val) {
+    return val > 9 ? val : "0" + val;
+  }
+
+  function display() {
+    document.querySelector('.timer').innerHTML = `${pad(minutes)}:${pad(seconds)}`;
+  }
+
+  function startTimer() {
+    setInterval(function() {
+      seconds++;
+      if (seconds === 60) {
+        seconds = 0;
+        minutes++;
+      }
+      display();
+    }, 1000);
+  }
+
+  startTimer();
+</script>
+
+</body>
+</html>
