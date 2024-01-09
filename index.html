@@ -7,7 +7,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      height: 80vh;
       margin: 0;
       font-family: Arial, sans-serif;
     }
@@ -26,13 +26,14 @@
 <script>
   let seconds = 0;
   let minutes = 0;
+  let hours = 0;
   
   function pad(val) {
     return val > 9 ? val : "0" + val;
   }
 
   function display() {
-    document.querySelector('.timer').innerHTML = `${pad(minutes)}:${pad(seconds)}`;
+    document.querySelector('.timer').innerHTML = `$:{pad(minutes)}:${pad(minutes)}:${pad(seconds)}`;
   }
 
   function startTimer() {
@@ -41,6 +42,10 @@
       if (seconds === 60) {
         seconds = 0;
         minutes++;
+      }
+      if (minutes === 60) {
+        minutes = 0;
+        hours++;
       }
       display();
     }, 1000);
