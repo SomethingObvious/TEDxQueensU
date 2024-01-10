@@ -18,8 +18,9 @@
       font-family: 'Times New Roman', Times, serif;
     }
     .counter {
-      font-size: 40px;
-      margin-top: 20px;
+      font-size: 100px;
+      margin-top: 100px;
+      font-family: 'Times New Roman', Times, serif;
     }
   </style>
 </head>
@@ -45,7 +46,7 @@
   }
 
   function displayCounter() {
-    document.querySelector('.counter').innerHTML = `Counter: ${dollars}.${pad(pennies)}`;
+    document.querySelector('.counter').innerHTML = `Counter: ${dollars}.${pad(pennies)}$`;
   }
 
   function startTimer() {
