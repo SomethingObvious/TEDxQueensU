@@ -62,16 +62,9 @@
           pennies = 0;
           dollars++;
         }
-      display();
+  function display() {
       document.querySelector('.counter').innerHTML = `Counter: ${dollars}.${pennies}`;
-    }, 1000);
-
-    // Counter updated every 24 seconds
-    setInterval(function() {
-      console.log("Counter:", pennies); // Replace this line with your desired action for the counter
-      count = 0; // Reset the counter
-    }, 24000);
-  }
+    }
 
   startTimer();
 </script>
