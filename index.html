@@ -40,7 +40,7 @@
     return val > 9 ? val : "0" + val;
   }
 
-  function display() {
+  function displayTimer() {
     document.querySelector('.timer').innerHTML = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
   }
 
@@ -48,7 +48,7 @@
     setInterval(function() {
       seconds++;
       count++;
-
+      displayTimer();
       if (seconds === 60) {
         seconds = 0;
         minutes++;
@@ -63,7 +63,11 @@
           pennies = 0;
           dollars++;
         }
-  function display() {
+      }
+      displayCounter();
+    }
+                }
+  function displayCounter() {
       document.querySelector('.counter').innerHTML = `Counter: ${dollars}.${pennies}`;
     }
 
