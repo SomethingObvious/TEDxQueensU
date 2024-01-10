@@ -33,6 +33,7 @@
   let minutes = 0;
   let seconds = 0;
   let count = 0;
+  let pennies = 0;
 
   function pad(val) {
     return val > 9 ? val : "0" + val;
@@ -56,12 +57,13 @@
         }
       }
       display();
-      document.querySelector('.counter').innerHTML = `Counter: ${count}`;
+      document.querySelector('.counter').innerHTML = `Counter: ${pennies}`;
     }, 1000);
 
     // Counter updated every 24 seconds
     setInterval(function() {
-      console.log("Counter:", count); // Replace this line with your desired action for the counter
+      pennies++;
+      console.log("Counter:", pennies); // Replace this line with your desired action for the counter
       count = 0; // Reset the counter
     }, 24000);
   }
