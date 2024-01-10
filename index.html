@@ -26,13 +26,13 @@
 <body>
 
 <div class="timer">00:00:00</div>
-<div class="counter">0.00$</div>
+<div class="counter">Counter: 0.00$</div>
 
 <script>
   let hours = 0;
   let minutes = 0;
   let seconds = 0;
-  let count = 0;
+  let timerCount = 0; // Separate count for timer
   let pennies = 0;
   let dollars = 0;
 
@@ -51,7 +51,7 @@
   function startTimer() {
     setInterval(function() {
       seconds++;
-      count++;
+      timerCount++;
       displayTimer();
 
       if (seconds === 60) {
@@ -63,9 +63,9 @@
         }
       }
 
-      if (count === 24) {
+      if (timerCount === 24) {
         pennies++;
-        count = 0; // Reset count for the next iteration
+        timerCount = 0; // Reset timer count for the next iteration
         displayCounter();
 
         if (pennies === 100) {
