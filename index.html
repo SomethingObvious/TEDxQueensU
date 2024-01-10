@@ -5,6 +5,7 @@
   <style> 
     body {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 60vh;
@@ -18,7 +19,7 @@
     }
     .counter {
       font-size: 100px;
-      margin-top: 20px;
+      margin-top: 60px;
       height: 60vh;
       font-family: 'Times New Roman', Times, serif;
     }
@@ -46,7 +47,7 @@
   }
 
   function displayCounter() {
-    document.querySelector('.counter').innerHTML = `Amount Made : ${dollars}.${(pennies)}$`;
+    document.querySelector('.counter').innerHTML = `Amount Made : ${dollars}.${pad(pennies)}$`;
   }
 
   function startTimer() {
