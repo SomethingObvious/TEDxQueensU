@@ -27,6 +27,9 @@
   let hours = 0;
   let minutes = 0;
   let seconds = 0;
+  let count = 0;
+  let pennies = 0;
+  let dollars = 0;
 
   function pad(val) {
     return val > 9 ? val : "0" + val;
@@ -39,6 +42,8 @@
   function startTimer() {
     setInterval(function() {
       seconds++;
+      count++;
+
       if (seconds === 60) {
         seconds = 0;
         minutes++;
@@ -49,6 +54,13 @@
       }
       display();
     }, 1000);
+
+    // Counter updated every 24 seconds
+    setInterval(function() {
+      pennies++;
+      console.log("Pennies Dispensed:", pennies); // Replace this line with your desired action for the counter
+      count = 0; // Reset the counter
+    }, 24000);
   }
 
   startTimer();
