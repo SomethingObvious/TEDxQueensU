@@ -17,19 +17,22 @@
       font-weight: bold;
       font-family: 'Times New Roman', Times, serif;
     }
+    .counter {
+      font-size: 40px;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
 
 <div class="timer">00:00:00</div>
+<div class="counter">0</div>
 
 <script>
   let hours = 0;
   let minutes = 0;
   let seconds = 0;
   let count = 0;
-  let pennies = 0;
-  let dollars = 0;
 
   function pad(val) {
     return val > 9 ? val : "0" + val;
@@ -53,12 +56,12 @@
         }
       }
       display();
+      document.querySelector('.counter').innerHTML = `Counter: ${count}`;
     }, 1000);
 
     // Counter updated every 24 seconds
     setInterval(function() {
-      pennies++;
-      console.log("Pennies Dispensed:", pennies); // Replace this line with your desired action for the counter
+      console.log("Counter:", count); // Replace this line with your desired action for the counter
       count = 0; // Reset the counter
     }, 24000);
   }
