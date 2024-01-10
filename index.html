@@ -26,7 +26,7 @@
 <body>
 
 <div class="timer">00:00:00</div>
-<div class="counter">0</div>
+<div class="counter">0.00$</div>
 
 <script>
   let hours = 0;
@@ -56,13 +56,18 @@
           hours++;
         }
       }
+      if (count === 24) {
+        pennies++;
+        if (pennies === 100) {
+          pennies = 0;
+          dollars++;
+        }
       display();
-      document.querySelector('.counter').innerHTML = `Counter: ${pennies}`;
+      document.querySelector('.counter').innerHTML = `Counter: ${dollars}.${pennies}`;
     }, 1000);
 
     // Counter updated every 24 seconds
     setInterval(function() {
-      pennies++;
       console.log("Counter:", pennies); // Replace this line with your desired action for the counter
       count = 0; // Reset the counter
     }, 24000);
