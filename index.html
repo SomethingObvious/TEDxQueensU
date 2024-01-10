@@ -32,7 +32,7 @@
   let hours = 0;
   let minutes = 0;
   let seconds = 0;
-  let timerCount = 0; // Separate count for timer
+  let timerCount = 0;
   let pennies = 0;
   let dollars = 0;
 
@@ -52,7 +52,6 @@
     setInterval(function() {
       seconds++;
       timerCount++;
-      displayTimer();
 
       if (seconds === 60) {
         seconds = 0;
@@ -63,9 +62,12 @@
         }
       }
 
+      displayTimer();
+
       if (timerCount === 24) {
+        timerCount = 0;
         pennies++;
-        timerCount = 0; // Reset timer count for the next iteration
+
         displayCounter();
 
         if (pennies === 100) {
